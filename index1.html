@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First Webpage</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  .column {
+    height: 100%;
+    width: 100%;
+    border: 1px solid red;
+    background-color: #ccc;
+  }
+
+  .column.selected {
+    background-color: blue;
+  }
+
+    </style>
+  
+  </head>
+
+  <body>
+    <main class="content">
+    <div class="column" id="column-0"></style></div>
+    <div class="column" id="column-1"></style></div>
+    <div class="column" id="column-2"></style></div>
+    <div class="column" id="column-3"></style></div>
+    </main>
+</head>
+
+<script type ="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script> type="text/javascript">
+  console.log("hello world");
+  console.log($);
+  var windowWidth=$(window).width();
+  console.log($(window));
+
+  $(window).on("mousemove", function(evt){
+    var mouseX = evt.pageX;
+    var mouseY = evt.pageY;
+    // console.log(mouseX);
+    // console.log(mouseY);
+    var mouseStatus = mouseX + ", " + mouseY;
+    // console.log(mouseStatus);
+
+    $(".column.selected").removeClass("selected");
+
+    if (mouseX > 0 && mouseX <windowWidth* (1/4)) {
+      console.log("im in the first quarter");
+      $('#column-0').addClass("selected");
+    } else if (mouseX >= windowWidth * (1/4) && mouseX < windowWidth * (2/4)) {
+      $('#column-1').addClass("selected");
+
+    }
+
+  })
+
+</script>
+  </body>
+</html>
